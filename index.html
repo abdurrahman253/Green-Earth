@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth</title>
+   <link rel="shortcut icon" href="./assets/pngwing.com.png" type="image/x-icon">
+    
+    <!-- DaisyUI CDN -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<style>
+  *{
+     font-family: "Inter", sans-serif;
+  }
+</style>
+
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar bg-green-700 shadow-sm md:px-16">
+  <div class="navbar-start ">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-36 p-2 shadow-lg ">
+        <li class="text-center"><a class="link link-hover font-semibold r">About</a> </li>
+        <li><a class="link link-hover font-semibold">Gallery</a> </li>
+        <li><a class="link link-hover font-semibold">Plant a Tree</a> </li>
+      </ul>
+    </div>
+    <img src="./assets/new.logo.png" alt="" class="w-14 hidden md:block">
+   <h2 class="text-lg md:text-2xl pl-3 font-semibold text-white">Green Earth</h2>
+  </div>
+  <div class="navbar-center hidden lg:flex gap-7">
+   <a class="link link-hover text-white font-semibold">About</a>
+   <a class="link link-hover text-white font-semibold">Gallery</a>
+   <a class="link link-hover text-white font-semibold">Plant a Tree</a>
+  </div>
+  <div class="navbar-end">
+   <button class="bg-yellow-400 text-green-700 font-semibold py-1 px-4 md:py-2 md:px-5 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-md transition-colors duration-300 ease-in-out focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Plant a Tree</button>
+  </div>
+    </nav>
+ 
+    <!-- Banner -->
+     <section class="bg-[#CFF0DC] mt-3"> 
+     <div class="flex justify-around flex-col md:flex-row">
+       <div class="left_img rotate-180 md:rotate-0">
+        <img src="./assets/hero-leaf1.png" alt="">
+       </div>
+       
+         <div class="title_Items space-y-3 flex flex-col justify-center items-center">
+            <h1 class="font-bold text-3xl md:text-6xl ">Plant a Tree, Grow a Future</h1>
+            <p class=" md:text-lg font-normal text-center">Join our mission to plant 1 million trees and make the Earth greener for future <br>
+            generations.</p>
+            <button class="bg-yellow-400 text-green-700 font-semibold py-1 px-4 md:py-2 md:px-5 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-md transition-colors duration-300 ease-in-out focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Get Involved</button>
+         </div>
+
+       <div class="right_img">
+        <img src="./assets/hero-leaf2.png" alt="">
+       </div>
+
+     </div>
+
+     </section>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
