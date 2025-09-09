@@ -61,7 +61,7 @@
             <h1 class="text-3xl font-bold md:text-6xl ">Plant a Tree, Grow a Future</h1>
             <p class="px-6 text-sm font-normal text-center md:text-lg">Join our mission to plant 1 million trees and make the Earth greener for future <br>
             generations.</p>
-            <button class="px-4 py-1 font-semibold text-green-700 transition-colors duration-300 ease-in-out bg-yellow-400 rounded-full shadow-lg cursor-pointer md:py-2 md:px-5 hover:bg-yellow-500 hover:shadow-md focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Get Involved</button>
+            <button class="px-5 py-2 font-semibold text-green-700 transition-colors duration-300 ease-in-out bg-yellow-400 rounded-full shadow-lg cursor-pointer hover:bg-yellow-500 hover:shadow-md focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Get Involved</button>
          </div>
 
        <div class="right_img">
@@ -73,7 +73,26 @@
      </section>
  
      <main>
+       <!-- Functionalities --> 
+        <section class="my-24">
+          <div class="w-[85.93%] mx-auto border border-red-900 grid gap-8 grid-cols-12">
+            
+            <aside class="col-span-2 category_side">
+              <ul id="category_container" class="space-y-4">
+                 
+              </ul>
+            </aside>
+             
+             <div id="plants_container" class="grid grid-cols-3 col-span-8 border border-red-800 gap-7 all_plant">
+              
+            </div>
 
+            <aside class="col-span-2 border border-red-900 add_to_cart">
+
+            </aside>
+          </div>
+
+        </section>     
         
 
 
@@ -125,6 +144,21 @@
         
      </main>
      
+    
+        <!-- Modal Box -->
+          <dialog id="plants_modal" class="modal modal-bottom sm:modal-middle">
+                 <div class="modal-box">
+                   <div id="modal_container">
+
+                  </div>
+                  <div class="modal-action">
+                   <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                     <button class="btn">Close</button>
+                       </form>
+                   </div>
+                       </div>
+          </dialog>
      
      <!-- Plant a Tree Today Section & Footer -->
       <footer>
@@ -251,7 +285,7 @@
 
 
 
-  
+    
    
      
     <script src="./script.js"></script>
