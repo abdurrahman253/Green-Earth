@@ -42,6 +42,7 @@ categoryContainer.addEventListener("click", (event) => {
     if( event.target.localName === "li") {
          
          showLoading();
+
         loadPlantsByCategory(event.target.id)
 
 
@@ -198,16 +199,6 @@ const showPlantsDetails = (plant) => {
 
 
 
-// Adding loading Spinner
-const showLoading = () => {
-    plantsContainer.innerHTML = `
-     <div class="flex justify-center items-center min-h-[200px] space-y-4"
-         
-        
-    </div>
-    `
-}
-
 
 // Adding Cart 
 plantsContainer.addEventListener("click" , (event) => {
@@ -294,6 +285,23 @@ if (cartItems.length > 0) {
 
 
 
- loadCategory();
+
+// Adding loading Spinner
+   
+const showLoading = () => {
+    plantsContainer.innerHTML = `
+        <div class="col-span-full flex justify-center items-center py-20 space-x-4">
+          <span class="loading loading-spinner loading-xs"></span>
+          <span class="loading loading-spinner loading-sm"></span>
+          <span class="loading loading-spinner loading-md"></span>
+          <span class="loading loading-spinner loading-lg"></span>
+          <span class="loading loading-spinner loading-xl"></span>
+        </div>
+    `;
+};
+
+
+
+loadCategory();
 loadPlants();
 

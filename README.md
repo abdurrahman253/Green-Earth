@@ -1,5 +1,5 @@
 ## Answer no. (1)
-### Var,Let আর Const এর মধ্যে পার্থক্য হল ঃ  
+### Var,Let আর Const এর মধ্যে পার্থক্য হল : 
 
 #### 1. var
 
@@ -66,7 +66,7 @@ console.log(z); // ans - 50
 
 ## Answer no. (2)
 
-### map(), forEach(), আর filter() এর মধ্যে পার্থক্য হল ঃ  
+### map(), forEach(), আর filter() এর মধ্যে পার্থক্য হল : 
 
 #### 1. map()
 
@@ -115,7 +115,7 @@ console.log(even); // [2, 4]
 
 ## Answer no. (3)
 
-### Arrow Function বলতে যা বোঝায় ঃ  
+### Arrow Function বলতে যা বোঝায় : 
 
 
 Arrow Function হলো JavaScript ES6 এ আসা নতুন ফাংশন লেখার সংক্ষিপ্ত উপায়। আগে function লিখতে হলে function কীওয়ার্ড ব্যবহার করতে হতো, এখন => (arrow) দিয়ে ছোট আকারে ফাংশন লেখা যায়।
@@ -183,7 +183,7 @@ console.log(sayHi()); // Hi!
 
 ## Answer no. (4)
 
-### Destructuring Assignment বলতে যা বোঝায় ঃ  
+### Destructuring Assignment বলতে যা বোঝায় :  
 
 Destructuring হলো array বা object থেকে value গুলো আলাদা করে ভ্যারিয়েবলে নেওয়ার সহজ উপায়। আগে আলাদা আলাদা করে index বা property দিয়ে নিতে হতো, কিন্তু ES6 এ destructuring ব্যবহার করলে অনেক কম কোডে কাজ হয়।
 
@@ -263,7 +263,7 @@ console.log(country); // Bangladesh
 
 ## Answer no. (5)
 
-### Template Literals বলতে যা বোঝায় ঃ 
+### Template Literals বলতে যা বোঝায় :
 
 Template Literal হলো ES6 এ আসা একটা নতুন ফিচার। String বানানোর সময় + দিয়ে join করার দরকার হয় না। Instead, আমরা backtick ( ` ) ব্যবহার করি। এর ভেতরে ${expression} লিখে আমরা variable, expression, এমনকি function call-ও বসাতে পারি। 
 
