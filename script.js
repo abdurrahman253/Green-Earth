@@ -4,6 +4,10 @@ const modalContainer  = document.getElementById("modal_container")
 const plantsModal = document.getElementById("plants_modal");
 const cartContainer = document.getElementById("cart_container");
 const cartCount = document.getElementById("cart_count")
+const cartTotal = document.getElementById("cart_total");
+const cartContainerMobile = document.getElementById("cart_container_mobile");const cartCountMobile = document.getElementById("cart_count_mobile");
+const cartTotalMobile = document.getElementById("cart_total_mobile");
+
 
 let addToCart = []
 
@@ -27,7 +31,7 @@ const showCategory = (categories) => {
     categories.forEach( (category) => {
         
         categoryContainer.innerHTML += `
-         <li id="${category.id}" class="cursor-pointer block p-3 text-xl font-medium focus:bg-[#15803D] text-center transition-transform shadow-sm rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:text-white hover:bg-[#15803D]"> ${category.category_name}</li>
+         <li id="${category.id}" class="cursor-pointer p-3 flex justify-center items-center text-xs text-center md:text-xl font-semibold  md:font-medium focus:bg-[#15803D] transition-transform shadow-sm rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:text-white hover:bg-[#15803D] "> ${category.category_name}</li>
         `
     });
 }
@@ -36,8 +40,11 @@ const showCategory = (categories) => {
 // Adding event listener with category container 
 categoryContainer.addEventListener("click", (event) => {
     if( event.target.localName === "li") {
-        showLoading();
+         
+         showLoading();
         loadPlantsByCategory(event.target.id)
+
+
     }
 
 })
@@ -218,59 +225,73 @@ const handleAddToCart = (event) => {
      
     const id = event.target.parentNode.parentNode.id ;
     addToCart.push({
-       treeName : treeName,
+       name : treeName,
        price : plantsPrice,
        id : id
     })
 
-    showAddToCart(addToCart)
+    updateCart(addToCart);
+    
    }
  
-   // showing add to cart 
-   const showAddToCart = (addToCart) => {
-    cartContainer.innerHTML = "";
-  
-    let total = 0;
+   
+   function updateCart(cartItems) {
+  cartContainer.innerHTML = "";
+  cartContainerMobile.innerHTML = "";
 
-     addToCart.forEach(atc => {
-     total += atc.price;
+  let total = 0;
 
-       cartContainer.innerHTML += `
-         <div class="flex items-center justify-between p-4 mb-3 transition bg-white border border-gray-200 shadow-sm rounded-xl hover:shadow-md">
-                  <div>
-                    <h1 class="text-lg font-semibold text-gray-800"> ${atc.treeName} </h1>
-                    <span class="text-green-600 font-bold text-sm">৳ ${atc.price} </span>
-                  </div>
+  cartItems.forEach(atc => {
+    total += atc.price;
 
-                  <button onclick="handleDeleteButton('${atc.id}') " class="px-3 py-1 text-sm font-medium text-red-500 border border-red-400 rounded-lg hover:bg-red-500 hover:text-white transition">
-                    Remove
-                  </button>
-       `
-     })
-      
-
-     if (addToCart.length > 0) {
-      cartContainer.innerHTML += `
-      <div class="flex justify-between items-center p-4 mt-4 bg-green-50 border border-green-200 rounded-xl shadow-sm">
-       <h2 class="text-lg font-bold text-gray-800">Total:</h2>
-       <span class="text-xl font-bold text-green-700">৳ ${total} </span>
+    const html = `
+      <div class="flex items-center justify-between p-4 mb-3 transition bg-white border border-gray-200 shadow-sm rounded-xl hover:shadow-md">
+        <div>
+          <h1 class="text-lg font-semibold text-gray-800">${atc.name}</h1>
+          <span class="text-green-600 font-bold text-sm">৳ ${atc.price}</span>
+        </div>
+        <button onclick="handleDeleteButton('${atc.id}')" 
+          class="px-3 py-1 text-sm font-medium text-red-500 border border-red-400 rounded-lg hover:bg-red-500 hover:text-white transition">
+          Remove
+        </button>
       </div>
+    `;
 
-      `;
-     };
-     cartCount.innerText = addToCart.length;
+    [cartContainer, cartContainerMobile].forEach(container => {
+      container.innerHTML += html;
+    });
+  });
 
-   } ;
+  
+if (cartItems.length > 0) {
+  const totalHtml = `
+    <div class=" flex justify-between items-center p-4 mt-4 bg-green-50 border border-green-200 rounded-xl shadow-sm">
+      <h2 class=" text-lg font-bold text-gray-800">Total:</h2>
+      <span class="text-xl font-bold text-green-700">৳ ${total}</span>
+    </div>
+  `;
+  cartContainer.innerHTML += totalHtml;
+  cartContainerMobile.innerHTML += totalHtml;
+}
+
+  // counters update
+  cartCount.innerText = cartItems.length;
+  cartCountMobile.innerText = cartItems.length;
+  cartTotal.innerText = "৳ " + total;
+  cartTotalMobile.innerText = "৳ " + total;
+}
+   
+    
   
 
-
-   // handle delete button 
+ // handle delete button 
    const handleDeleteButton = (addToCartId) => {
      const filteredAtc = addToCart.filter(atc => atc.id !== addToCartId)
      addToCart = filteredAtc 
-     showAddToCart(addToCart)
+     updateCart(addToCart);
     
    }
+
 
 
  loadCategory();

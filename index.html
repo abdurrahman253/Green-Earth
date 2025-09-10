@@ -41,7 +41,7 @@
       </ul>
     </div>
     <img src="./assets/new.logo.png" alt="" class="hidden w-14 md:block">
-   <h2 class="pl-3 text-lg font-semibold text-white md:text-2xl">Green Earth</h2>
+   <h2 class="pl-3 text-lg font-semibold text-white md:text-2xl ">Green Earth</h2>
   </div>
   <div class="hidden navbar-center lg:flex gap-7">
    <a class="font-semibold text-white link link-hover">About</a>
@@ -49,7 +49,30 @@
    <a class="font-semibold text-white link link-hover">Plant a Tree</a>
   </div>
   <div class="navbar-end">
-   <button class="px-4 py-1 font-semibold text-green-700 transition-colors duration-300 ease-in-out bg-yellow-400 rounded-full shadow-lg cursor-pointer md:py-2 md:px-5 hover:bg-yellow-500 hover:shadow-md focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Plant a Tree</button>
+
+   
+   
+    <!-- Mobile Cart Button -->
+<div class="fixed top-4 right-4 z-50 md:hidden dropdown dropdown-end">
+  <label tabindex="0" class="btn btn-circle bg-green-600 text-white shadow-lg">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart_count_mobile" 
+          class="absolute -top-2 -right-2 bg-yellow-400 text-green-800 text-xs font-bold px-2 py-1 rounded-full shadow">
+      0
+    </span>
+  </label>
+
+  <!-- Mobile Cart Dropdown -->
+  <div tabindex="0" class="mt-3 dropdown-content w-72 bg-white shadow-xl rounded-lg p-4 space-y-3">
+    <h2 class="text-lg font-bold text-green-700">Your Cart</h2>
+    <div id="cart_container_mobile" class="space-y-3 max-h-60 overflow-y-auto">
+      
+    </div>
+    
+  </div>
+</div>
+
+ <button class="hidden md:block w-44 px-4 py-1 font-semibold text-green-700 transition-colors duration-300 ease-in-out bg-yellow-400 rounded-full shadow-lg cursor-pointer md:py-2 md:px-5 hover:bg-yellow-500 hover:shadow-md focus:outline-none focus:right-2 focus:ring-green-200 focus:ring-offset-2">Plant a Tree</button>
   </div>
     </nav>
  
@@ -77,21 +100,22 @@
  
      <main>
        <!-- Functionalities --> 
-        <section class="my-24">
-          <div class="w-[85.93%] mx-auto border border-red-900 grid gap-8 grid-cols-12">
+        <section class="my-8 md:my-24">
+          <div class="md:w-[85.93%] mx-auto border border-red-900 md:grid gap-8 md:grid-cols-12">
             
-            <aside class="col-span-2 category_side">
-              <ul id="category_container" class="space-y-4">
+            <aside class="md:px-0 px-14 md:col-span-2 category_side">
+              <ul id="category_container" class=" grid grid-cols-2 gap-4 md:grid-cols-1">
                  
               </ul>
             </aside>
              
-             <div id="plants_container" class="grid grid-cols-3 col-span-8 border border-red-800 gap-7 all_plant">
+             <div id="plants_container" class="md:py-0 py-10 px-14 md:px-0 grid md:col-span-8 border border-red-800 md:grid-cols-3 gap-7 all_plant">
                  
              </div>
-
-
-               <aside  class="col-span-2 overflow-hidden bg-white border border-red-900 rounded-lg add_to_cart">
+               
+  
+             <aside  class="col-span-2 hidden md:block overflow-hidden bg-white border border-red-900 rounded-lg add_to_cart"> 
+              
                <div class="flex items-center justify-between p-4 shadow bg-gradient-to-r from-green-500 to-green-700 rounded-t-xl">
                  <h1 class="text-xl font-bold text-white">Your Cart</h1>
                  <span id="cart_count" class="px-3 py-1 text-sm font-semibold text-green-700 bg-white rounded-full shadow">0</span>
@@ -99,26 +123,15 @@
                 
                <div id="cart_container" class="border-b border-gray-200">
                 
-                 
-                
-                </div>
-                
-
                </div>
+             </aside> 
 
-            </aside>
+
+                 </div>
+
+        </section>
           
-                </div>
-
-
-
-             
-        </section>     
-        
-
-
-
-
+      
         <!-- About Campain -->
          <section class=" md:w-[56.8%] mx-auto mt-9 md:mt-28">
              <div class="text-center">
@@ -129,9 +142,9 @@
                 </div>
 
                 <div class="container flex-1 px-8 space-y-4 text-left md:px-0">
-                   <p class="text-sm font-normal md:text-lg"> Green Earth is a global tree plantation initiative dedicated to fighting  climate change. Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+                   <p class=" font-normal text-lg"> Green Earth is a global tree plantation initiative dedicated to fighting  climate change. Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
 
-                   <ul class="pl-3 text-sm font-normal list-disc list-inside md:text-lg">
+                   <ul class="pl-3 font-normal list-disc list-inside text-lg">
                     <li>Restoration of natural habitats </li>
                     <li>Improvement of air quality</li>
                     <li>Support for local communities</li>
@@ -302,7 +315,8 @@
   </aside>
         </section>
       </footer>
-
+      
+      
 
 
 
