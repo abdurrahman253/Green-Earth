@@ -52,7 +52,7 @@ categoryContainer.addEventListener("click", (event) => {
         })
   
         event.target.classList.add("bg-[#15803D]", "text-white")
-        
+
     }
 
 })
@@ -306,13 +306,6 @@ const showLoading = () => {
         </div>
     `;
 };
-
-
-
-
-
-
-
 
 
 
