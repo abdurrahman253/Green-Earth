@@ -78,7 +78,7 @@ const showPlantsByCategory = (plants) => {
      plantsContainer.innerHTML = "";
   plants.forEach(plant => {
      plantsContainer.innerHTML += `
-        <div id="${plant.id}" class="rounded-2xl shadow-md card bg-base-100 h-[36.25rem]">
+        <div id="${plant.id}" class="rounded-2xl shadow-md card bg-base-100 flex flex-col">
                      <div >
                           <img
                               src=" ${plant.image} "
@@ -87,12 +87,17 @@ const showPlantsByCategory = (plants) => {
                      <div class="p-4 card-body">
                         <h2  class="cursor-pointer text-xl font-bold card-title"> ${plant.name} </h2>
                         <p class="text-base"> ${plant.description} </p>
-                          <div class="justify-between card-actions my-7">
-                               <div class="text-lg font-medium rounded-2xl btn btn-outline btn-success"> ${plant.category} </div>
+                          <div class="justify-between card-actions ">
+                               
+                         <div class=" text-sm md:text-base font-medium px-3 py-1 rounded-2xl border border-green-600 text-green-700 bg-green-50">
+                        ${plant.category}
+                          </div>
+
+
                                 <div class="">৳ <span class="font-bold text-xl text-[#15803D]"> ${plant.price} </span> </div>
                           </div>
 
-                         <button class="mt-3 w-full bg-green-600 text-white font-bold py-2 rounded-full hover:bg-green-700 transition-colors">Add to Cart</button>
+                         <button class="mt-3 w-full bg-green-600 text-white font-semibold md:font-bold py-2 rounded-full hover:bg-green-700 transition-colors">Add to Cart</button>
                     </div>
                  </div>
        
