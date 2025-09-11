@@ -31,7 +31,7 @@ const showCategory = (categories) => {
     categories.forEach( (category) => {
         
         categoryContainer.innerHTML += `
-         <li id="${category.id}" class="cursor-pointer p-3 flex justify-center items-center text-xs text-center md:text-xl font-semibold  md:font-medium focus:bg-[#15803D] transition-transform shadow-sm rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:text-white hover:bg-[#15803D] "> ${category.category_name}</li>
+         <li id="${category.id}" class="cursor-pointer p-3 flex justify-center items-center text-xs text-center md:text-xl font-semibold  md:font-medium transition-transform shadow-sm rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:text-white hover:bg-[#15803D] "> ${category.category_name}</li>
         `
     });
 }
@@ -44,8 +44,15 @@ categoryContainer.addEventListener("click", (event) => {
          showLoading();
 
         loadPlantsByCategory(event.target.id)
-
-
+          
+        
+        const allLi = categoryContainer.querySelectorAll("li");
+        allLi.forEach(li => {
+          li.classList.remove("bg-[#15803D]", "text-white");
+        })
+  
+        event.target.classList.add("bg-[#15803D]", "text-white")
+        
     }
 
 })
@@ -299,6 +306,14 @@ const showLoading = () => {
         </div>
     `;
 };
+
+
+
+
+
+
+
+
 
 
 
